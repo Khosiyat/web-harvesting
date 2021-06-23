@@ -8,7 +8,8 @@ import requests
 
 
 def save_data():
-    request = requests.get('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
+    link='https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
+    request = requests.get(link)
 
     beautifilSoup = bs4.BeautifulSoup(request.text, "lxml")
     table = beautifilSoup.find('table', {'class': 'wikitable sortable'})
@@ -84,3 +85,4 @@ def compileFeatures():
 
 
 compileFeatures()
+      
